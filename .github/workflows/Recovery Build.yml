@@ -1,28 +1,28 @@
 name: Recovery Build
 
-于:
+on:
   workflow_dispatch:
     inputs:
       MANIFEST_URL:
         description: 'MANIFEST_URL (if want to use SSH keys, use git@github.com:XXXXX)'
         required: true
-        默认: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni'
+        default: 'https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni'
       MANIFEST_BRANCH:
         description: 'MANIFEST_BRANCH'
         required: true
-        默认: 'twrp-9.0'
+        default: 'android-9.0'
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        默认: 'https://github.com/hxzbaka/twrp_device_asr_dove_watch-H08'
+        default: 'https://github.com/hxzbaka/twrp_device_asr_dove_watch-H08'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        默认: 'main'
+        default: 'main'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
-        默认: 'device/asr/dove_watch'
+        default: 'device/asr/dove_watch'
       COMMON_TREE_URL:
         description: 'COMMON_TREE_URL (if no common tree, leave blank)'
         required: false
@@ -32,15 +32,15 @@ name: Recovery Build
       DEVICE_NAME:
         description: 'DEVICE_NAME'
         required: true
-        默认: 'dove_watch'
+        default: 'dove_watch'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
-        默认: 'omni_dove_watch'
+        default: 'omni_dove_watch'
       BUILD_TARGET:
         description: 'BUILD_TARGET'
         required: true
-        默认: 'recovery'
+        default: 'recovery'
 
 jobs:
   build:
