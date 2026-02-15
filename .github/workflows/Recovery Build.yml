@@ -108,6 +108,11 @@ jobs:
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
 
+    - name: Setup Python 2
+      run: |
+        sudo apt install -y python2
+        sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 1
+
     - name: Initialize repo
       run: |
         mkdir workspace
